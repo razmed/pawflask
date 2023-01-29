@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form in HTML | CodingNepal</title>
+      <link rel="stylesheet" href="{{url_for('static', filename='styleuser.css')}}">
+     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='image/faviconlogo.png')}}">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+  
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+            <div class="logo"><a href="/snowybook"><img src="{{url_for('static', filename='image/logositepaw.png')}}" height="110px" width="220px"class="logo"></a></div>
+              <ul class="links">
+                <li><a href="/snowybook">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="/sign-up">Sign</a></li>
+                
+                <li>
+                  <a href="#" class="desktop-link">Category</a>
+                  <input type="checkbox" id="show-services">
+                  <label for="show-services">Category</label>
+                  <ul>
+                    <li><a href="/biography">Biographies</a></li>
+                    <li><a href="/manga">Comic & mangas</a></li>
+                    <li><a href="/drame">Drame</a></li>
+                    <li><a href="/novel">novel</a></li>
+                    <li><a href="/rommance">Romance</a></li>
+                    
+                    <li>
+                      <a href="/thriller" class="desktop-link">Thriller</a>
+                      <input type="checkbox" id="show-items">
+                      <label for="show-items">Thriller</label>
+                      <ul>
+                        <li><a href="/mystery">mystery</a></li>
+                        <li><a href="/crime">crime</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/sciencefiction" class="desktop-link">Sci-Fi & Fantasy</a>
+                      <input type="checkbox" id="show-items">
+                      <label for="show-items">Sci-Fi & Fantasy</label>
+                      <ul>
+                        <li><a href="/action">Action</a></li>
+                        <li><a href="/darkfantasy">Dark Fantasy</a></li>
+                        <li><a href="/commingofage">Coming of Age</a></li>
+                       
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">cart</a></li>
+                
+              </ul>
+            </div>
+            <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+            <form action="#" class="search-box">
+              <input type="text" placeholder="Type Something to Search..." required>
+              <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+            </form>
+          </nav>
+      </div>
+    
+    <div class="userwrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login Form
+            </div>
+            <div class="title signup">
+               Signup Form
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Forgot password?</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Signup now</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password" required>
+                  </div>
+                  <div class="signup-link">
+                    Already a Member? <a href="">Login here</a>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>
